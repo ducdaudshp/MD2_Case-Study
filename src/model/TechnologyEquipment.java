@@ -1,6 +1,6 @@
 import java.time.LocalDate;
 
-public class technologyEquipment {
+public class TechnologyEquipment {
     private String id;
     private String name;
     private String color;
@@ -9,10 +9,10 @@ public class technologyEquipment {
     private int amount;
     private double cost;
 
-    public technologyEquipment() {
+    public TechnologyEquipment() {
     }
 
-    public technologyEquipment(String id, String name, String color, String brand, LocalDate importDate, int amount, double cost) {
+    public TechnologyEquipment(String id, String name, String color, String brand, LocalDate importDate, int amount, double cost) {
         this.id = id;
         this.name = name;
         this.color = color;
@@ -84,7 +84,7 @@ public class technologyEquipment {
 
     @Override
     public String toString() {
-        return "technologyEquipment{" +
+        return "TechnologyEquipment{" +
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
                 ", color='" + color + '\'' +

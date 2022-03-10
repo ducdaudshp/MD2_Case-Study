@@ -1,16 +1,16 @@
 import java.time.LocalDate;
 
-public class keyBoard extends technologyEquipment{
+public class KeyBoard extends TechnologyEquipment {
     private String button;
 
-    public keyBoard() {
+    public KeyBoard() {
     }
 
-    public keyBoard(String button) {
+    public KeyBoard(String button) {
         this.button = button;
     }
 
-    public keyBoard(String id, String name, String color, String brand, LocalDate importDate, int amount, double cost, String button) {
+    public KeyBoard(String id, String name, String color, String brand, LocalDate importDate, int amount, double cost, String button) {
         super(id, name, color, brand, importDate, amount, cost);
         this.button = button;
     }

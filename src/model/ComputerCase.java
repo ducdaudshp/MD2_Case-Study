@@ -1,16 +1,16 @@
 import java.time.LocalDate;
 
-public class computerCase extends technologyEquipment {
+public class ComputerCase extends TechnologyEquipment {
     private String design;
 
-    public computerCase() {
+    public ComputerCase() {
     }
 
-    public computerCase(String design) {
+    public ComputerCase(String design) {
         this.design = design;
     }
 
-    public computerCase(String id, String name, String color, String brand, LocalDate importDate, int amount, double cost, String design) {
+    public ComputerCase(String id, String name, String color, String brand, LocalDate importDate, int amount, double cost, String design) {
         super(id, name, color, brand, importDate, amount, cost);
         this.design = design;
     }

@@ -1,18 +1,18 @@
 import java.time.LocalDate;
 
-public class mouse extends technologyEquipment{
+public class Mouse extends TechnologyEquipment {
     private String connect;
     private double weight;
 
-    public mouse() {
+    public Mouse() {
     }
 
-    public mouse(String connect, double weight) {
+    public Mouse(String connect, double weight) {
         this.connect = connect;
         this.weight = weight;
     }
 
-    public mouse(String id, String name, String color, String brand, LocalDate importDate, int amount, double cost, String connect, double weight) {
+    public Mouse(String id, String name, String color, String brand, LocalDate importDate, int amount, double cost, String connect, double weight) {
         super(id, name, color, brand, importDate, amount, cost);
         this.connect = connect;
         this.weight = weight;

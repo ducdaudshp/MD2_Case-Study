@@ -1,18 +1,18 @@
 import java.time.LocalDate;
 
-public class screen extends technologyEquipment{
+public class Screen extends TechnologyEquipment {
     private int size;
     private int resolution;
 
-    public screen() {
+    public Screen() {
     }
 
-    public screen(int size, int resolution) {
+    public Screen(int size, int resolution) {
         this.size = size;
         this.resolution = resolution;
     }
 
-    public screen(String id, String name, String color, String brand, LocalDate importDate, int amount, double cost, int size, int resolution) {
+    public Screen(String id, String name, String color, String brand, LocalDate importDate, int amount, double cost, int size, int resolution) {
         super(id, name, color, brand, importDate, amount, cost);
         this.size = size;
         this.resolution = resolution;
