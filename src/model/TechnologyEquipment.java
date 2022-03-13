@@ -1,6 +1,12 @@
-import java.time.LocalDate;
+package model;
 
-public class TechnologyEquipment {
+import java.io.Serializable;
+import java.time.LocalDate;
+import java.util.List;
+
+public abstract class TechnologyEquipment implements Discount, Serializable{
+    public static List<TechnologyEquipment> technologyEquipmentList;
+
     private String id;
     private String name;
     private String color;
@@ -94,4 +100,6 @@ public class TechnologyEquipment {
                 ", cost=" + cost +
                 '}';
     }
+
+    public abstract LocalDate getDiscount();
 }

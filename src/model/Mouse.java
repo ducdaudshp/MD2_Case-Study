@@ -1,6 +1,8 @@
+package model;
+
 import java.time.LocalDate;
 
-public class Mouse extends TechnologyEquipment {
+public class Mouse extends TechnologyEquipment implements Discount{
     private String connect;
     private double weight;
 
@@ -36,9 +38,41 @@ public class Mouse extends TechnologyEquipment {
 
     @Override
     public String toString() {
-        return "mouse{" + super.toString()+
+        return "Mouse{" + super.toString()+
                 "connect='" + connect + '\'' +
                 ", weight=" + weight +
                 '}';
+    }
+
+    @Override
+    public double getRealMoney() {
+        double realMoney;
+        LocalDate discountDay = getDiscount();
+        LocalDate discountMonth_10 = getDiscount().minusMonths(18);
+        LocalDate discountMonth_25 = getDiscount().minusMonths(12);
+        LocalDate today = LocalDate.now();
+        if (today.isBefore(discountDay)){
+            if (today.isAfter(discountMonth_10)){
+                if (today.isAfter(discountMonth_25)){
+                    realMoney = getCost() - (getCost() * 25)/100;
+                    return realMoney;
+                }else {
+                    realMoney = getCost() - (getCost() * 10)/100;
+                    return realMoney;
+                }
+            }else{
+                realMoney = getCost() - (getCost() *5)/100;
+                return  realMoney;
+            }
+        } else{
+            realMoney = getCost() - (getCost() * 50)/100;
+            return realMoney;
+        }
+    }
+
+    @Override
+    public LocalDate getDiscount() {
+        LocalDate discount = getImportDate().plusMonths(24);
+        return discount;
     }
 }

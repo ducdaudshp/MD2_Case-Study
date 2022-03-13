@@ -1,6 +1,8 @@
+package model;
+
 import java.time.LocalDate;
 
-public class KeyBoard extends TechnologyEquipment {
+public class KeyBoard extends TechnologyEquipment implements Discount {
     private String button;
 
     public KeyBoard() {
@@ -25,8 +27,40 @@ public class KeyBoard extends TechnologyEquipment {
 
     @Override
     public String toString() {
-        return "keyBoard{" + super.toString()+
+        return "KeyBoard{" + super.toString()+
                 "button='" + button + '\'' +
                 '}';
+    }
+
+    @Override
+    public double getRealMoney() {
+        double realMoney;
+        LocalDate discountDay = getDiscount();
+        LocalDate discountMonth_10 = getDiscount().minusYears(2);
+        LocalDate discountMonth_25 = getDiscount().minusYears(1);
+        LocalDate today = LocalDate.now();
+        if (today.isBefore(discountDay)){
+            if (today.isAfter(discountMonth_10)){
+                if (today.isAfter(discountMonth_25)){
+                    realMoney = getCost() - (getCost() * 25)/100;
+                    return realMoney;
+                }else {
+                    realMoney = getCost() - (getCost() * 10)/100;
+                    return realMoney;
+                }
+            }else{
+                realMoney = getCost() - (getCost() *5)/100;
+                return  realMoney;
+            }
+        } else{
+            realMoney = getCost() - (getCost() * 45)/100;
+            return realMoney;
+        }
+    }
+
+    @Override
+    public LocalDate getDiscount() {
+        LocalDate discount = getImportDate().plusYears(3);
+        return discount;
     }
 }

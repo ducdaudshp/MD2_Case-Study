@@ -1,2 +1,5 @@
-package model;public interface Discount {
+package model;
+
+public interface Discount {
+    double getRealMoney();
 }
