@@ -360,8 +360,8 @@ public class Method {
         else {
             TechnologyEquipmentManager.deleteTechnology(technologyEquipment);
             System.out.println("Xóa thành công ID:" + id);
-
         }
+        TechnologyEquipmentFile.writeFile(technologyEquipmentList);
     }
 
 
@@ -535,6 +535,7 @@ public class Method {
                 ((Card) Method.technologyEquipmentList.get(index)).setNameOfCard(newNameofCard);
             }
         }
+        TechnologyEquipmentFile.writeFile(technologyEquipmentList);
     }
 
     public static void getRealMoneyById(String id){
