@@ -54,9 +54,9 @@ public class TechnologyEquipmentManager {
 //        technologyEquipmentList.set(index, newTechnologyEquipment);
 //    }
 
-    public static void editTechnologyEquipmentById(int index, TechnologyEquipment newTechnologyEquipment){
-        technologyEquipmentList.set(index, newTechnologyEquipment );
-    }
+//    public static void editTechnologyEquipmentById(int index, TechnologyEquipment newTechnologyEquipment){
+//        technologyEquipmentList.set(index, newTechnologyEquipment );
+//    }
 
 
 }

@@ -1,5 +1,6 @@
 package controller;
 
+import com.sun.source.tree.CaseTree;
 import model.*;
 import storage.TechnologyEquipmentFile;
 
@@ -30,6 +31,14 @@ public class Method {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Mời bạn nhập ID");
         String id = scanner.nextLine();
+
+        for(int i=0; i<technologyEquipmentList.size();i++){
+            if (technologyEquipmentList.get(i).getId().equals(id)){
+                System.out.println("ID bị trùng. Mời nhập lại ID");
+                Screen newScreen = creatNewScreen();
+                return newScreen;
+            }
+        }
 
         Scanner scanner1 = new Scanner(System.in);
         System.out.println("Mời bạn nhập tên");
@@ -90,6 +99,14 @@ public class Method {
         System.out.println("Mời bạn nhập ID");
         String id = scanner.nextLine();
 
+        for (int i = 0; i < technologyEquipmentList.size(); i++) {
+            if (technologyEquipmentList.get(i).getId().equals(id)){
+                System.out.println("ID bị trùng. Mời nhập lại ID");
+                ComputerCase newComputerCase = creatNewComputerCase();
+                return newComputerCase;
+            }
+        }
+
         Scanner scanner1 = new Scanner(System.in);
         System.out.println("Mời bạn nhập tên");
         String name = scanner1.nextLine();
@@ -144,6 +161,14 @@ public class Method {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Mời bạn nhập ID");
         String id = scanner.nextLine();
+
+        for (int i = 0; i < technologyEquipmentList.size(); i++) {
+            if (technologyEquipmentList.get(i).getId().equals(id)){
+                System.out.println("ID bị trùng. Mời nhập lại ID");
+                Mouse newMouse = creatNewMouse();
+                return newMouse;
+            }
+        }
 
         Scanner scanner1 = new Scanner(System.in);
         System.out.println("Mời bạn nhập tên");
@@ -203,6 +228,14 @@ public class Method {
         System.out.println("Mời bạn nhập ID");
         String id = scanner.nextLine();
 
+        for (int i = 0; i < technologyEquipmentList.size(); i++) {
+            if (technologyEquipmentList.get(i).getId().equals(id)){
+                System.out.println("ID bị trùng. Mời nhập lại ID");
+                KeyBoard newKeyBoard = creatNewKeyBoard();
+                return newKeyBoard;
+            }
+        }
+
         Scanner scanner1 = new Scanner(System.in);
         System.out.println("Mời bạn nhập tên");
         String name = scanner1.nextLine();
@@ -256,6 +289,14 @@ public class Method {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Mời bạn nhập ID");
         String id = scanner.nextLine();
+
+        for (int i = 0; i < technologyEquipmentList.size(); i++) {
+            if (technologyEquipmentList.get(i).getId().equals(id)){
+                System.out.println("ID bị trùng. Mời nhập lại ID");
+                Card newCard = creatNewCard();
+                return newCard;
+            }
+        }
 
         Scanner scanner1 = new Scanner(System.in);
         System.out.println("Mời bạn nhập tên");
@@ -329,9 +370,9 @@ public class Method {
             int index = checkIndexById(id);
             Scanner input = new Scanner(System.in);
             if (Method.technologyEquipmentList.get(index) instanceof Screen) {
-                System.out.println("Nhập ID mới");
-                String newID = input.nextLine();
-                Method.technologyEquipmentList.get(index).setId(newID);
+//                System.out.println("Nhập ID mới");
+//                String newID = input.nextLine();
+//                Method.technologyEquipmentList.get(index).setId(newID);
                 System.out.println("Nhập tên mới");
                 String newName = input.nextLine();
                 Method.technologyEquipmentList.get(index).setName(newName);
@@ -364,9 +405,9 @@ public class Method {
             }
 
             if (Method.technologyEquipmentList.get(index) instanceof ComputerCase) {
-                System.out.println("Nhập ID mới");
-                String newID = input.nextLine();
-                Method.technologyEquipmentList.get(index).setId(newID);
+//                System.out.println("Nhập ID mới");
+//                String newID = input.nextLine();
+//                Method.technologyEquipmentList.get(index).setId(newID);
                 System.out.println("Nhập tên mới");
                 String newName = input.nextLine();
                 Method.technologyEquipmentList.get(index).setName(newName);
@@ -396,9 +437,9 @@ public class Method {
             }
 
             if (Method.technologyEquipmentList.get(index) instanceof Mouse) {
-                System.out.println("Nhập ID mới");
-                String newID = input.nextLine();
-                Method.technologyEquipmentList.get(index).setId(newID);
+//                System.out.println("Nhập ID mới");
+//                String newID = input.nextLine();
+//                Method.technologyEquipmentList.get(index).setId(newID);
                 System.out.println("Nhập tên mới");
                 String newName = input.nextLine();
                 Method.technologyEquipmentList.get(index).setName(newName);
@@ -431,9 +472,9 @@ public class Method {
             }
 
             if (Method.technologyEquipmentList.get(index) instanceof KeyBoard) {
-                System.out.println("Nhập ID mới");
-                String newID = input.nextLine();
-                Method.technologyEquipmentList.get(index).setId(newID);
+//                System.out.println("Nhập ID mới");
+//                String newID = input.nextLine();
+//                Method.technologyEquipmentList.get(index).setId(newID);
                 System.out.println("Nhập tên mới");
                 String newName = input.nextLine();
                 Method.technologyEquipmentList.get(index).setName(newName);
@@ -463,9 +504,9 @@ public class Method {
             }
 
             if (Method.technologyEquipmentList.get(index) instanceof Card) {
-                System.out.println("Nhập ID mới");
-                String newID = input.nextLine();
-                Method.technologyEquipmentList.get(index).setId(newID);
+//                System.out.println("Nhập ID mới");
+//                String newID = input.nextLine();
+//                Method.technologyEquipmentList.get(index).setId(newID);
                 System.out.println("Nhập tên mới");
                 String newName = input.nextLine();
                 Method.technologyEquipmentList.get(index).setName(newName);
